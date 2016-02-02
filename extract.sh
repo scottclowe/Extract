@@ -29,7 +29,7 @@ function extract {
         *.7z)        7z x ./"$1"        ;;
         *.xz)        unxz ./"$1"        ;;
         *.exe)       cabextract ./"$1"  ;;
-        *)           echo "extract: '$1' - unknown archive method" ;;
+        *)           echo "extract: '$1' - unknown archive method"; return 1 ;;
     esac;
 }
 
