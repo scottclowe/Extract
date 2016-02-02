@@ -32,3 +32,6 @@ function extract {
         *)           echo "extract: '$1' - unknown archive method" ;;
     esac;
 }
+
+# Main
+extract "$@";
