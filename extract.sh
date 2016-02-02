@@ -37,38 +37,33 @@ function extract {
     echo "$1 is a $TYPE";
     case $TYPE in
         application/x-gtar)
-            tar -xvf "$1";
-            return ;;
+            tar -xvf "$1";;
         application/x-lzma)
-            unlzma "$1";
-            return ;;
+            unlzma "$1";;
         application/x-bzip2)
-            bunzip2 "$1";
-            return ;;
+            bunzip2 "$1";;
         application/x-rar)
-            unrar x -ad "$1";
-            return ;;
+            unrar x -ad "$1";;
         application/gzip)
             # gunzip won't work without an extension, so use 7z
-            7z x "$1";
-            return ;;
+            7z x "$1";;
         application/zip)
-            unzip "$1";
-            return ;;
+            unzip "$1";;
         application/x-compress)
-            uncompress "$1";
-            return ;;
+            uncompress "$1";;
         application/x-7z-compressed)
-            7z x "$1";
-            return ;;
+            7z x "$1";;
         application/x-xz)
-            unxz "$1";
-            return ;;
+            unxz "$1";;
         *)
-            echo "extract: '$1' - unknown mime-type '$TYPE'";;
+            echo "extract: '$1' - unknown mime-type '$TYPE'";
+            false;;
     esac;
     # 7z is a Swiss-army knife for decompression, so try that
-    7z x "$1";
+    if [[ $? -ne 0 ]];
+    then
+        7z x "$1";
+    fi;
 }
 
 # Main
