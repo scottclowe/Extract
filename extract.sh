@@ -45,14 +45,16 @@ function extract {
         application/x-rar)
             unrar x -ad "$1";;
         application/gzip)
-            # gunzip won't work without an extension, so use 7z
-            7z x "$1";;
+            # gunzip won't work without an extension, so just use 7z
+            false;;
         application/zip)
             unzip "$1";;
         application/x-compress)
             uncompress "$1";;
         application/x-7z-compressed)
-            7z x "$1";;
+            # Don't double up on 7z
+            # 7z x "$1";;
+            false;;
         application/x-xz)
             unxz "$1";;
         *)
