@@ -65,9 +65,10 @@ function extract {
             unxz "$1";
             return ;;
         *)
-            echo "extract: '$1' - unknown mime-type '$TYPE'";
-            return 1;;
+            echo "extract: '$1' - unknown mime-type '$TYPE'";;
     esac;
+    # 7z is a Swiss-army knife for decompression, so try that
+    7z x "$1";
 }
 
 # Main
