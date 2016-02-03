@@ -52,9 +52,8 @@ function extract {
         application/x-compress)
             uncompress "$1";;
         application/x-7z-compressed)
-            # Don't double up on 7z
-            # 7z x "$1";;
-            false;;
+            7z x "$1";
+            return;; # Don't double up on 7z
         application/x-xz)
             unxz "$1";;
         *)
@@ -64,7 +63,8 @@ function extract {
     # 7z is a Swiss-army knife for decompression, so try that
     if [[ $? -ne 0 ]];
     then
-        7z x "$1";
+        command -v 7z >/dev/null 2>&1 \
+            && 7z x "$FILE";
     fi;
 }
 
