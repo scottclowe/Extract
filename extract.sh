@@ -11,8 +11,6 @@ function extract {
         echo "'$1' - file does not exist"
         return 1;
     fi;
-    NAME=${1%.*}
-    #mkdir $NAME && cd $NAME
     case "$1" in
         *.tar.bz2)   tar xvjf "$1";     return  ;;
         *.tar.gz)    tar xvzf "$1";     return  ;;
