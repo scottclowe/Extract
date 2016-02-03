@@ -8,9 +8,11 @@ function extract {
         return 0;
     fi;
     if [ ! -f "$1" ] ; then
+        # Make sure file exists
         echo "'$1' - file does not exist"
         return 1;
     fi;
+    # Try to decompress file based on extension
     case "$1" in
         *.tar.bz2)   tar xvjf "$1";     return  ;;
         *.tar.gz)    tar xvzf "$1";     return  ;;
@@ -31,7 +33,7 @@ function extract {
     esac;
     # No extension given it seems, so we will try to work it out by MIME-type
     TYPE=$(file --mime-type -b "$1")
-    echo "Trying to deduce compression from MIME type";
+    echo "Trying to deduce compression method from MIME type";
     echo "$1 is a $TYPE";
     case $TYPE in
         application/x-gtar)
