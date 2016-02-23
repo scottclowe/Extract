@@ -12,10 +12,10 @@ How to install (Mac OS X)
 -------------------------
 
 ### Mac OS X
-Copy&Paste function into file `~/.bash_profile`
+Copy and paste function section of extract.sh into file `~/.bash_profile`.
 
 ### Ubuntu / *nix
-Copy&Paste function into file `~/.bashrc`
+Copy and paste function section of extract.sh into file `~/.bashrc`.
 
 How it use
 ----------
