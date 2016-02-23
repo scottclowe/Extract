@@ -26,3 +26,8 @@ Usage
 Using command `extract`, in a terminal:
 
     $ extract <archive_filename.extention>
+
+You can also use `extract.sh` as a shell script without copying anything to
+`~/.bashrc`, like so:
+
+    ./extract.sh <archive_filename.extention>
