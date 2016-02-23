@@ -25,4 +25,4 @@ Usage
 
 Using command `extract`, in a terminal:
 
-        $ extract <archive_filename.extention>
+    $ extract <archive_filename.extention>
