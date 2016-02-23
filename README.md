@@ -1,5 +1,3 @@
-
-
 Command/function `extract` in your console
 =================================
 
