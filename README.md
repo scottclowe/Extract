@@ -22,8 +22,3 @@ How it use
 
 Using command `extract`, in a terminal
     `$ extract <archive_filename.extention>`
-
-
-License
--------
-Author [Vitalii Tereshchuk](http://dotoca.net). &copy; 2013, MIT license.
